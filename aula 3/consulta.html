@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Consulta Médica</title>
+</head>
+<body>
+    <h1> 📅 Agendamento de Consulta Médica </h2>
+        <hr>
+    <h2> 1️⃣ Informações Pessoais </h5>
+        <hr>
+    <form action="#" method="post">
+
+        <label for="nome">Nome:</label> <br>
+        <input type="text" name="nome"> <br><br>
+
+        <label for="Data de Nascimento">Data de Nascimento:</label> <br> 
+        <input type="date" name="Data de Nascimento"> <br><br>
+
+        <label for="gênero">Gênero</label> <br>
+        <select name="gênero" id="gênero">
+         <option value="Feminino">Feminino</option>
+         <option value="Masculo">Masculino</option>
+         <option value="Prefiro nao informar">Prefiro não informar</option>
+        </select> <br><br>
+
+        <label for="CPF">CPF:</label> <br>
+        <input type="text" name="cPF"> <br><br>
+
+        <label for="rg">RG:</label> <br>
+        <input type="text" name="rg"><br><br>
+
+        <label for="email">E-mail:</label> <br>
+        <input type="text" name:"email"> <br><br> 
+
+        <label for="endereço">Endereço:</label> <br>
+        <input type="text" name="endereço" placeholder="insira aqui seu endereço "><br><br>
+       
+        <hr>
+     <h2>2️⃣ Detalhes da consulta</h2>   
+
+     <hr>
+     <h3> ✅ Qual área da medicina ele quer consultar ?</h3>
+     <select name="especialidade" required>
+    <option value="">Selecione</option>
+    <option value="cardiologia">Cardiologia</option>
+    <option value="dermatologia">Dermatologia</option>
+    <option value="pediatria">Pediatria</option>
+    <option value="ortopedia">Ortopedia</option>
+    <option value="ginecologia">Ginecologia</option>
+</select> <br><br>
+
+     <h3>✅  Escolha do médico:</h3> 
+    <select name="medico_preferido">
+    <option value="">Nenhuma preferência</option>
+    <option value="dr_silva">Dr. Silva </option>
+    <option value="dra_fernanda">Dra. Fernanda </option>
+    <option value="dr_roberto">Dr. Roberto </option>
+</select> <br><br>
+
+    <h3>✅ Motivo da Consulta:</h3>
+     <input type="text" name="motivo_consulta" placeholder="Descreva o motivo "> <br>
+
+      <h3>✅ Data Desejada:</h3>
+     <label for="Data desejada">Data de Nascimento:</label> <br> 
+     <input type="date" name="Data desejada"> <br><br>
+
+      <h3>✅ Horário Desejado:</h3>
+      <label>Horário preferido:</label><br>
+
+       <select name="horario_preferido" >
+    <option value="">Selecione</option>
+    <option value="08:00">08:00</option>
+    <option value="09:00">09:00</option>
+    <option value="10:00">10:00</option>
+    <option value="11:00">11:00</option>
+    <option value="13:00">13:00</option>
+    <option value="14:00">14:00</option>
+    <option value="15:00">15:00</option>
+    <option value="16:00">16:00</option>
+       </select> <br> <br>
+
+<button id="Confirmar Consulta ">Confirmar Consulta! </button> 
+
+      
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+    
+</body>
+</html>
