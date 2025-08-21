@@ -1,0 +1,12 @@
+body{
+   background-color: rgb(86, 246, 115);
+ h1{
+    color: crimson;
+    text-align: center;
+    font-size: 70px;
+ }
+ h2{
+    color: rgb(25, 121, 206);
+    text-align: center;
+ }
+}
