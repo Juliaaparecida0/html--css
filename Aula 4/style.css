@@ -1,0 +1,27 @@
+body {
+    background-color: #e2a1a1;
+}
+
+h1 {
+    text-align: center;
+    color: #84b5e6;
+    font-size: 60px;
+}
+
+h2 {
+    text-align: center;
+    color: #76def6;
+    font-size: 50px;
+}
+
+.paragrafo1 {
+    text-align: center;
+    color: #000000;
+    font-size: 35px;
+}
+
+.paragrafo2 {
+    text-align: center;
+    color: #000000;
+    font-size: 35px;
+}
