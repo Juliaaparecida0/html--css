@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maison Élégance – Salão de Beleza</title>
+  <meta name="description" content="Salão de beleza premium em sua cidade. Cabelos, maquiagem, unhas e estética com profissionais especializados." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* 🎨 Paleta Azul */
+    :root{
+      --bg: #f0f7ff;        /* azul bem claro */
+      --bg-soft: #e6f0fa;   /* azul pálido */
+      --text: #1f2a47;      /* azul marinho */
+      --muted: #6b7a99;     /* cinza-azulado */
+      --accent: #7bb2f0;    /* azul médio */
+      --accent-2: #a7d0ff;  /* azul claro */
+      --ok: #4cb1a0;        /* verde água */
+      --danger: #e57373;    /* vermelho suave */
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(31,42,71,.25); /* sombra azulada */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: Inter, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 80% -10%, rgba(123,178,240,.18), transparent 60%),
+                  radial-gradient(900px 600px at -10% 40%, rgba(167,208,255,.12), transparent 60%),
+                  var(--bg);
+      line-height: 1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px, 92%);margin-inline:auto}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(240,247,255,.85), rgba(240,247,255,.5));
+      border-bottom: 1px solid rgba(123,178,240,.25);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:40px;height:40px;border-radius:50%;
+      background: radial-gradient(60% 60% at 30% 30%, var(--accent-2), var(--accent));
+      box-shadow: inset 0 0 0 1px rgba(31,42,71,.2);
+    }
+    .brand h1{font:700 18px/1 Playfair Display, serif}
+    .menu{display:flex;gap:22px;align-items:center}
+    .cta{padding:10px 16px;border-radius:999px;border:1px solid rgba(123,178,240,.4)}
+
+    /* Hero */
+    .hero{padding:88px 0 64px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+    .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:2.5px;font-size:12px}
+    .hero h2{font:700 clamp(36px, 4.2vw, 60px)/1.08 Playfair Display, serif;margin:10px 0 14px}
+    .hero p{color:#334466;opacity:.9;margin:0 0 26px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:14px 18px;border-radius:12px;border:1px solid transparent;display:inline-flex;gap:10px;align-items:center;cursor:pointer}
+    .btn-primary{background:linear-gradient(180deg, var(--accent-2), var(--accent));color:#1f2a47;box-shadow: var(--shadow);font-weight:600}
+    .btn-ghost{border-color:rgba(123,178,240,.4)}
+
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(123,178,240,.25);
+      border-radius: var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Sections */
+    .section{padding:64px 0}
+    .section h3{font:700 28px/1.2 Playfair Display, serif;margin:0 0 12px}
+    .sub{color:var(--muted);margin:0 0 28px}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 920px){.hero-grid{grid-template-columns:1fr}.grid.cols-3{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 620px){.grid.cols-3{grid-template-columns:1fr}}
+
+    /* Cards */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));border:1px solid rgba(123,178,240,.25);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+    .card .image{aspect-ratio: 4/3; background: #e6f0fa; display:grid;place-items:center}
+    .card .content{padding:16px}
+
+    /* Form */
+    form{display:grid;gap:12px}
+    input, textarea, select{
+      width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(123,178,240,.35);
+      background: #e6f0fa;color:var(--text);outline:none
+    }
+    input:focus, textarea:focus, select:focus{border-color: var(--accent)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width: 620px){.row{grid-template-columns:1fr}}
+
+    /* Footer */
+    footer{padding:26px 0;border-top:1px solid rgba(123,178,240,.25);color:#334466aa;text-align:center}
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo"></div>
+        <h1>Maison Élégance</h1>
+      </div>
+      <nav class="menu">
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#avaliacoes">Depoimentos</a>
+        <a href="#contato" class="cta">Agende já</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="kicker">Beleza & Bem-estar</span>
+          <h2>Transforme seu visual com um atendimento exclusivo.</h2>
+          <p>Cabelo, maquiagem, unhas e estética com profissionais que entendem o seu estilo.</p>
+          <div class="hero-actions">
+            <a href="#servicos" class="btn btn-primary">Ver serviços</a>
+            <a href="#contato" class="btn btn-ghost">Agendar horário</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3 style="font-family:'Playfair Display',serif;margin:0 0 8px">Promoção da Semana</h3>
+          <p class="sub">Hidratação capilar + Escova</p>
+          <p>Deixe seus fios leves, macios e brilhosos com nossa linha premium.</p>
+          <div class="price"><strong>R$ 120</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="section">
+      <div class="container">
+        <h3>Nossos serviços</h3>
+        <p class="sub">Cuidado completo para realçar sua beleza.</p>
+        <div class="grid cols-3">
+          <article class="card">
+            <div class="image"><span>Imagem cabelo</span></div>
+            <div class="content">
+              <h4>Cortes & Penteados</h4>
+              <p class="sub">Do clássico ao moderno, para qualquer ocasião.</p>
+              <strong>A partir de R$ 90</strong>
+            </div>
+          </article>
+          <article class="card">
+            <div class="image"><span>Imagem maquiagem</span></div>
+            <div class="content">
+              <h4>Maquiagem</h4>
+              <p class="sub">Makes profissionais para eventos e dia a dia.</p>
+              <strong>A partir de R$ 150</strong>
+            </div>
+          </article>
+          <article class="card">
+            <div class="image"><span>Imagem manicure</span></div>
+            <div class="content">
+              <h4>Manicure & Pedicure</h4>
+              <p class="sub">Esmaltação perfeita com técnicas de cuidado.</p>
+              <strong>A partir de R$ 60</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <h3>Sobre nós</h3>
+        <p>Desde 2010, oferecemos um espaço acolhedor e moderno para cuidar de você. Nossa equipe é formada por especialistas em beleza, sempre atualizados com as últimas tendências.</p>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="avaliacoes" class="section">
+      <div class="container">
+        <h3>O que dizem nossas clientes</h3>
+        <p class="sub">Experiências reais de quem já passou por aqui.</p>
+        <div class="grid cols-3">
+          <div class="card" style="padding:18px">
+            <p>“Adorei meu novo corte! Atendimento impecável e ambiente super agradável.”</p>
+            <p class="sub">— Fernanda S.</p>
+          </div>
+          <div class="card" style="padding:18px">
+            <p>“A maquiagem durou a festa inteira, fiquei deslumbrante!”</p>
+            <p class="sub">— Juliana M.</p>
+          </div>
+          <div class="card" style="padding:18px">
+            <p>“Melhor hidratação que já fiz, cabelo renovado. Recomendo muito!”</p>
+            <p class="sub">— Carla A.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section">
+      <div class="container">
+        <h3>Agende seu horário</h3>
+        <p class="sub">Preencha o formulário e entraremos em contato.</p>
+        <form>
+          <div class="row">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+          </div>
+          <div class="row">
+            <input type="tel" placeholder="Telefone / WhatsApp" required>
+            <select required>
+              <option>Selecione o serviço</option>
+              <option>Corte de cabelo</option>
+              <option>Coloração</option>
+              <option>Maquiagem</option>
+              <option>Manicure / Pedicure</option>
+            </select>
+          </div>
+          <textarea rows="4" placeholder="Observações"></textarea>
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Maison Élégance – Salão de Beleza. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
