@@ -1,0 +1,110 @@
+.bloco {
+  color: blue;
+}
+
+#primeiro {
+  background-color: yellow;
+}
+
+h3 {
+  color: green;
+}
+
+li {
+  color: red;
+}
+
+.bloco1 {
+  background-color: rgb(255, 127, 193);
+}
+
+.bloco2 {
+  background-color: crimson;
+}
+
+.agrupamento p,
+.agrupamento h2,
+.agrupamento h3 {
+  color: rgb(205, 92, 143);
+}
+
+.centralizado p {
+  text-align: center;
+}
+
+#link-google {
+  color: rgb(43, 255, 0);
+}
+
+#link-youtube {
+  color: red;
+}
+
+.compartilhada p {
+  font-weight: bold;
+}
+
+img {
+  border-radius: 15px;
+  height: 300px;
+}
+
+.descendente p {
+  color: blueviolet;
+}
+
+.p1 p {
+  color: deeppink;
+}
+
+.p2 p {
+  color: hotpink;
+}
+
+#fonte {
+  font-family: Arial, sans-serif;
+}
+
+.negrito {
+  font-weight: bold;
+}
+
+.itálico {
+  font-style: italic;
+}
+
+.sublinhado {
+  text-decoration: underline;
+}
+
+div h3 {
+  color: lightpink;
+}
+
+#caixa1 {
+  color: red;
+}
+
+#caixa2 {
+  color: rgb(0, 255, 64);
+}
+
+#caixa3 {
+  color: darkblue;
+}
+
+.destaque {
+  color: gold;
+}
+
+#caixacolorida {
+  background-color: pink;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.caixa h1,
+.caixa p,
+.caixa a {
+  color: rgb(175, 139, 232);
+}
