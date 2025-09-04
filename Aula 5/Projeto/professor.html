@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Professor</title>
+</head>
+<body>
+    <h1>🏫 Sistema de Cadastro Escolar</h1>
+    <p>Bem-vindos ao sistema de cadastros da nossa escola virtual!!</p>
+
+    <h2>📋 Menu de Cadastros</h2>
+    <a href="/Projeto/aluno.html"><button>👨‍🎓 Cadastrar aluno</button></a>
+    <a href="/Projeto/professor.html"><button>👨‍🏫 Cadastrar professor</button></a>
+    <a href="/Projeto/curso.html"><button>📋 Cadastrar curso</button></a>
+    <a href="/Projeto/livro.html"><button>📖Cadastrar livro</button></a>
+
+    <div><link rel="stylesheet" href="/Projeto/style.css"></div>
+    
+    <div class="container">
+        <div class="formulario">
+            <h2>👨‍🏫 Cadastro de Professor</h2>
+
+            <label>Nome Completo:</label><br>
+            <input type="text" id="nome"><br><br>
+
+            <label>CPF:</label><br>
+            <input type="text" id="cpf"><br><br>
+
+            <label>Email Institucional:</label><br>
+            <input type="email" id="email"><br><br>
+
+            <label>Formação:</label><br>
+            <select id="formacao">
+                <option value="">Selecione a formação</option>
+                <option>Licenciatura</option>
+                <option>Bacharelado</option>
+                <option>Pós-Graduação</option>
+                <option>Mestrado</option>
+                <option>Doutorado</option>
+            </select><br><br>
+
+            <label>Disciplinas que Leciona:</label><br>
+            <input type="checkbox" name="disciplinas" value="Matemática"> Matemática <br>
+            <input type="checkbox" name="disciplinas" value="Português"> Português <br>
+            <input type="checkbox" name="disciplinas" value="História"> História <br>
+            <input type="checkbox" name="disciplinas" value="Geografia"> Geografia <br>
+            <input type="checkbox" name="disciplinas" value="Ciências"> Ciências <br>
+            <input type="checkbox" name="disciplinas" value="Educação Física"> Educação Física <br><br>
+
+            <label>Carga Horária Semanal:</label><br>
+            <input type="number" id="carga" min="1"> horas<br><br>
+
+            <label>Experiência (anos):</label><br>
+            <input type="number" id="experiencia" min="0"> anos<br><br>
+
+            <label>Disponibilidade:</label><br>
+            <input type="radio" name="disponibilidade" value="integral"> Período Integral <br>
+            <input type="radio" name="disponibilidade" value="parcial"> Período Parcial <br><br>
+
+            <button>Cadastrar Professor</button>
+            <button type="reset">Limpar Dados</button>
+        </div>
+    </div>
+      
+    
+</body>
+</html>

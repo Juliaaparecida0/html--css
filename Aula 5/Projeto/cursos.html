@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página curso</title>
+</head>
+<body>
+    <h1>🏫 Sistema de Cadastro Escolar</h1>
+    <p>Bem-vindos ao sistema de cadastros da nossa escola virtual!!</p>
+
+   <h2>📋Menu de Cadastros</h2>
+   <a href="/Projeto/aluno.html"><button>👨‍🎓 Cadastrar aluno</button></a>
+   <a href="/Projeto/professor.html"><button>👨‍🏫 Cadastrar professor</button></a>
+   <a href="/Projeto/cursos.html"><button>📋 Cadastrar curso</button></a>
+   <a href="/Projeto/livro.html"><button>📖 Cadastrar livro</button></a>
+
+     <div><link rel="stylesheet" href="/Projeto/style.css"></div>
+
+     <div class="container">
+        <form class="formulario">
+            <h2>📋 Cadastro de Curso</h2>
+
+            <label for="nome">Nome do Curso:</label><br>
+            <input type="text" id="nome" name="nome"> <br><br>
+
+            <label for="codigo">Código do Curso:</label><br>
+            <input type="text" id="codigo" name="codigo"> <br><br>
+
+            <label for="categoria">Categoria:</label><br>
+            <select name="categoria" id="categoria">
+                <option value="">Selecione a categoria</option>
+                <option>Ciências Exatas</option>
+                <option>Ciências Humanas</option>
+                <option>Ciências Biológicas</option>
+                <option>Linguagens</option>
+                <option>Artes</option>
+            </select><br><br>
+
+            <label for="duracao">Duração (meses):</label><br>
+            <input type="number" id="duracao" name="duracao"><br><br>
+
+            <label>Modalidade:</label><br>
+            <div class="radio-group">
+                <input type="radio" name="modalidade" value="Presencial"> Presencial <br>
+                <input type="radio" name="modalidade" value="Online"> Online <br>
+                <input type="radio" name="modalidade" value="Híbrido"> Híbrido
+            </div><br>
+
+            <label>Pré-requisitos:</label><br>
+            <div class="checkbox-group">
+                <input type="checkbox" name="prereq" value="Ensino Médio Completo"> Ensino Médio Completo <br>
+                <input type="checkbox" name="prereq" value="Curso Básico"> Curso Básico <br>
+                <input type="checkbox" name="prereq" value="Experiência Prévia"> Experiência Prévia
+            </div><br>
+
+            <label for="descricao">Descrição do Curso:</label><br>
+            <textarea name="descricao" id="descricao" rows="4"></textarea><br><br>
+
+            <button type="submit">Cadastrar Curso</button>
+            <button type="reset">Limpar Dados</button>
+        </form>
+    </div>
+
+
+</body>
+</html>
