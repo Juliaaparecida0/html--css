@@ -1,0 +1,44 @@
+
+.tabela1{
+  text-align: center;
+border: solid rgb(0, 0, 0);
+
+}
+
+.tabela1 th{
+    background-color: hotpink;
+    color: rgb(0, 0, 0);
+}
+.Intervalo{
+    background-color: hotpink;
+    color: whitesmoke;
+}
+.tabela2{
+    border: solid black;
+text-align: center;
+}
+.pontos{
+    color: blue;
+    font-size: larger;
+}
+.vencedor{
+    background-color: yellow;
+}
+.tabela2 th{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.tabela3{
+    border: solid black;
+}
+.tabela3 th{
+    color: white;
+    background-color: black;
+}
+.tabela3 th {
+      background-color: #f0f0f0;
+      color: black;
+      font-weight: bold;
+    }
+    .tabela3 td.img {
+      text-align: center; }
