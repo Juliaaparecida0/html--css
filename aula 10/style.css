@@ -1,0 +1,80 @@
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #f0f7ff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+
+header {
+    background-color: #004aad;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+
+}
+
+nav a:hover {
+    color: #ffdf00;
+}
+
+main, section {
+    padding: 40px;
+    text-align: center;
+}
+
+#Sobre {
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 800px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+#Turmas {
+    background-color: #e1ebff;
+    padding: 30px;
+    font-weight: bold;
+    border-top: 3px solid #004aad;
+}
+
+
+#Contate-nos {
+    background-color: #ffffff;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+footer {
+    background-color: #004aad;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
