@@ -1,0 +1,55 @@
+body {
+    background-color: #e0f7f4;
+    padding: 20px;
+}
+
+.título{
+    color: #0076d0;
+    text-align: center;
+}
+
+.recepção{
+    text-align: center;
+   font-size: 25px ;
+   color: rgb(0, 86, 66);
+}
+
+
+h1 {
+    text-align: center;
+    color: #9efbf078;
+    margin-bottom: 30px;
+}
+
+
+.card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-width: 700px;
+    margin: 0 auto 20px; /* centraliza o card */
+    overflow: hidden; /* limpa float */
+}
+
+
+.card img {
+    float: left;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+
+.card .text h2 {
+    color: #0a7acf;
+    margin-bottom: 10px;
+}
+
+.card .text p {
+    color: #555;
+    line-height: 1.5;
+
+}
