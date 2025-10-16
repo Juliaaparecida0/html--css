@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julia Aparecida - Desenvolvedora de Sistemas</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary: #1F3B6D;      /* Azul escuro */
+        --primary-light: #4B7DCB; /* Azul médio */
+        --secondary: #F5F5F5;    /* Cinza claro */
+        --dark: #222222;         /* Texto escuro */
+        --light: #FFFFFF;        /* Branco */
+        --text: #333333;         /* Texto principal */
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--secondary);
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+        background: var(--light);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background: var(--primary-light);
+        transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 8rem 2rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 1rem;
+    }
+
+    .hero .highlight {
+        color: var(--primary);
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: var(--primary);
+        color: var(--light);
+    }
+
+    .btn-primary:hover {
+        background: var(--primary-light);
+    }
+
+    .btn-secondary {
+        background: var(--light);
+        color: var(--primary);
+        border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+        background: var(--primary);
+        color: var(--light);
+    }
+
+    /* Sections */
+    section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 3rem;
+    }
+
+    /* About */
+    .about-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .profile-photo {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--primary-light);
+    }
+
+    .about-text h3 {
+        font-size: 1.4rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    .about-text p {
+        margin-bottom: 1rem;
+        color: var(--dark);
+        line-height: 1.7;
+    }
+
+    /* Skills */
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .skill-card {
+        background: var(--light);
+        padding: 2rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--primary);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .skill-card h3 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .skill-card p {
+        color: #555;
+        font-size: 0.95rem;
+    }
+
+    /* Projects */
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+    }
+
+    .project-card {
+        background: var(--light);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    .project-content h3 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .project-content p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .project-link {
+        text-decoration: none;
+        color: var(--primary-light);
+        font-weight: 600;
+    }
+
+    .project-link:hover {
+        text-decoration: underline;
+    }
+
+    /* Contact */
+    .contact-container {
+        text-align: center;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: var(--light);
+        color: var(--primary);
+        border-radius: 50%;
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+        background: var(--primary);
+        color: var(--light);
+    }
+
+    footer {
+        background: var(--dark);
+        color: var(--light);
+        text-align: center;
+        padding: 2rem;
+    }
+
+    footer p {
+        color: #bbb;
+    }
+
+    @media(max-width:768px){
+        .about-container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+</style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Julia Aparecida</div>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Olá, eu sou <span class="highlight">Julia Aparecida</span></h1>
+    <p>Transformando ideias em software funcional</p>
+    <div class="cta-buttons">
+        <a href="#projetos" class="btn btn-primary">Ver Meus Projetos</a>
+        <a href="#contato" class="btn btn-secondary">Entre em Contato</a>
+    </div>
+</section>
+
+<section id="sobre">
+    <h2 class="section-title">Sobre Mim</h2>
+    <div class="about-container">
+        <div>
+            <img src="/portfolio.jfif" alt="Julia Aparecida" class="profile-photo">
+        </div>
+        <div class="about-text">
+            <h3>Quem sou eu?</h3>
+            <p>Sou estudante de Desenvolvimento de Sistemas no SENAI-SP, criando soluções digitais e aplicações modernas.</p>
+            <h3>Minha Jornada</h3>
+            <p>Gosto de transformar ideias em experiências reais e úteis. Estou em constante aprendizado com tecnologias atuais.</p>
+            <h3>Meu Objetivo</h3>
+            <p>Quero desenvolver software de qualidade que faça diferença e contribua com soluções inovadoras.</p>
+        </div>
+    </div>
+</section>
+
+<section id="habilidades">
+    <h2 class="section-title">Habilidades Técnicas</h2>
+    <div class="skills-container">
+        <div class="skill-card">
+            <h3>Linguagens</h3>
+            <p>JavaScript, HTML5, CSS3</p>
+        </div>
+        <div class="skill-card">
+            <h3>Banco de Dados</h3>
+            <p>MySQL e gerenciamento eficiente de dados</p>
+        </div>
+        <div class="skill-card">
+            <h3>Ferramentas</h3>
+            <p>Git, GitHub, VS Code</p>
+        </div>
+        <div class="skill-card">
+            <h3>Desenvolvimento Web</h3>
+            <p>Frontend responsivo e interfaces modernas</p>
+        </div>
+    </div>
+</section>
+
+<div class="project-card">
+    <div class="project-img">🌐</div>
+    <div class="project-content">
+        <h3>Landing Page de Produto</h3>
+        <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+        </div>
+        <p>Criação de uma página de produto responsiva, destacando design moderno, animações sutis e layout otimizado para dispositivos móveis.</p>
+        <a href="#" class="project-link">Ver Projeto →</a>
+    </div>
+</div>
+
+<section id="contato">
+    <h2 class="section-title">Vamos Trabalhar Juntos?</h2>
+    <div class="contact-container">
+        <p>Estou aberta a novas oportunidades e colaborações. Entre em contato!</p>
+        <div class="social-links">
+            <a href="https://wa.me/5511948951749" target="_blank">💬</a>
+            <a href="https://instagram.com/juufps" target="_blank">📷</a>
+            <a href="mailto:juliaapcon9@gmail.com">✉</a>
+        </div>
+        <a href="mailto:juliaapcon9@gmail.com" class="btn btn-primary">Enviar Email</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Julia Aparecida. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
