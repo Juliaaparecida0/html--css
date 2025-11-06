@@ -1,0 +1,413 @@
+/* Convertido para design minimalista: removidas animações, gradientes, efeitos de brilho e cores neon */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #f9f9f9;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --accent: #333333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* CABEÇALHO */
+.header {
+  background-color: white;
+  padding: 60px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.header .subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* NAVEGAÇÃO */
+.navigation {
+  background-color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 16px 24px;
+  transition: color 0.2s ease;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main {
+  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  margin: 80px 0;
+  padding: 60px 0;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.section p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  text-align: justify;
+  text-indent: 30px;
+  letter-spacing: 0.5px;
+}
+
+/* SEÇÃO "O QUE É IA" */
+.what-is-section {
+  background: transparent;
+  border-radius: 0px;
+  border: 0px solid var(--accent);
+  padding: 50px;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.what-is-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 500px;
+  height: 500px;
+  background: none;
+  animation: none;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, 30px);
+  }
+}
+
+.content-box {
+  position: relative;
+  z-index: 2;
+}
+
+/* SEÇÃO DE VÍDEOS */
+.videos-section {
+  background: transparent;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.video-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  padding: 0;
+  position: relative;
+}
+
+.video-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--primary);
+  z-index: 3;
+  box-shadow: none;
+}
+
+.video-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 500;
+  padding: 20px 20px 0;
+  letter-spacing: 0.5px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 16px 20px;
+  line-height: 1.6;
+}
+
+.video-author {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 0 20px 20px;
+  font-weight: 500;
+}
+
+.video-author i {
+  margin-right: 8px;
+}
+
+/* SEÇÃO DE APLICAÇÕES */
+.applications-section {
+  background: transparent;
+}
+
+.applications-list {
+  list-style: none;
+  margin-top: 40px;
+}
+
+.app-item {
+  background-color: white;
+  margin-bottom: 24px;
+  padding: 24px;
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent);
+}
+
+.app-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-icon-box {
+  font-size: 2.5rem;
+  color: var(--accent);
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: none;
+}
+
+.app-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.app-item strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.app-item p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* RODAPÉ */
+.footer {
+  background-color: white;
+  color: var(--text-primary);
+  text-align: center;
+  padding: 48px 0;
+  margin-top: 80px;
+  border-top: 1px solid var(--border-color);
+  position: relative;
+}
+
+.footer p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.footer strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.footer i {
+  margin-right: 8px;
+  color: var(--accent);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .nav-link {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+  }
+
+  .videos-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .section p {
+    text-align: left;
+    text-indent: 0;
+  }
+
+  .app-item {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .app-icon-box {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+  }
+
+  .nav-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .nav-link {
+    padding: 12px 12px;
+    font-size: 0.8rem;
+  }
+
+  .section {
+    padding: 40px 0;
+    margin: 40px 0;
+  }
+
+  .video-card {
+    padding: 0;
+  }
+
+  .app-item {
+    padding: 16px;
+  }
+
+  .footer p {
+    font-size: 0.85rem;
+  }
+}

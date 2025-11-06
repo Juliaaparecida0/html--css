@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligência Artificial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        .header-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            background-color: rgba(45, 55, 72, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a:hover {
+            background-color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background-color: white;
+            margin: 40px 0;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section h2 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        section h2 i {
+            font-size: 1.2em;
+        }
+
+        .intro-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .intro-text p {
+            text-align: justify;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .intro-image {
+            text-align: center;
+        }
+
+        .intro-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .intro-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .feature-card i {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .video-container {
+            margin: 30px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+            border-radius: 15px;
+            border-left: 6px solid #667eea;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .video-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), transparent);
+            border-radius: 0 15px 0 100%;
+        }
+
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .video-container h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .video-container h3 i {
+            color: #667eea;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .video-info {
+            margin-top: 15px;
+            font-size: 1em;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .video-author {
+            font-weight: bold;
+            color: #667eea;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1em;
+        }
+
+        ul.aplicacoes {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            gap: 20px;
+        }
+
+        ul.aplicacoes li {
+            padding: 25px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-left: 6px solid #764ba2;
+            border-radius: 12px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: start;
+            gap: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        ul.aplicacoes li:hover {
+            transform: translateX(15px);
+            box-shadow: 0 8px 25px rgba(118, 75, 162, 0.3);
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+        }
+
+        ul.aplicacoes li i {
+            font-size: 2.5em;
+            color: #667eea;
+            min-width: 50px;
+        }
+
+        ul.aplicacoes li strong {
+            color: #2d3748;
+            font-size: 1.2em;
+        }
+
+        .app-content {
+            flex: 1;
+        }
+
+        footer {
+            background-color: rgba(45, 55, 72, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+        }
+
+        footer i {
+            margin-right: 8px;
+            color: #667eea;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .ai-image-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .ai-image-section img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .ai-image-section img:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            .intro-section {
+                grid-template-columns: 1fr;
+            }
+
+            .video-container iframe {
+                height: 250px;
+            }
+
+            section {
+                padding: 30px 20px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            ul.aplicacoes li {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-icon">
+            <i class="fas fa-brain"></i>
+        </div>
+        <h1>Inteligência Artificial</h1>
+        <p><i class="fas fa-rocket"></i> Explorando o futuro da tecnologia</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#o-que-e"><i class="fas fa-question-circle"></i> O que é IA?</a></li>
+            <li><a href="#videos"><i class="fas fa-play-circle"></i> Vídeos</a></li>
+            <li><a href="#aplicacoes"><i class="fas fa-cogs"></i> Aplicações</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="o-que-e">
+            <h2><i class="fas fa-lightbulb"></i> O que é Inteligência Artificial?</h2>
+            
+            <div class="intro-section">
+                <div class="intro-text">
+                    <p>
+                        A Inteligência Artificial (IA) é um ramo da ciência da computação dedicado a criar sistemas capazes de realizar tarefas que normalmente exigiriam inteligência humana. Esses sistemas são projetados para aprender, raciocinar, reconhecer padrões e tomar decisões de forma autônoma.
+                    </p>
+                    <p>
+                        A IA funciona através de algoritmos complexos e modelos matemáticos que processam grandes quantidades de dados para identificar padrões e fazer previsões. O aprendizado de máquina, uma subcategoria da IA, permite que os sistemas melhorem seu desempenho com a experiência.
+                    </p>
+                    <p>
+                        Existem diferentes tipos de IA: a IA fraca, especializada em tarefas específicas como reconhecimento de voz ou recomendação de produtos, e a IA forte, que seria capaz de realizar qualquer tarefa intelectual humana. Atualmente, todas as IAs em uso são consideradas fracas, embora sejam extremamente poderosas em suas áreas específicas.
+                    </p>
+                    <p>
+                        A tecnologia de IA está revolucionando diversos setores da sociedade, desde a medicina até a educação, passando pelo entretenimento e transporte. Com o avanço contínuo da tecnologia, a IA promete transformar ainda mais nossa forma de viver, trabalhar e interagir com o mundo ao nosso redor.
+                    </p>
+                </div>
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="Inteligência Artificial">
+                </div>
+            </div>
+
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Ma"chine Learning</h3>
+                    <p>Sistemas que aprendem com dados e melhoram com a experiência</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Deep Learning</h3>
+                    <p>Redes neurais profundas que imitam o cérebro humano</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Processamento de Linguagem</h3>
+                    <p>Compreensão e geração de linguagem natural</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Visão Computacional</h3>
+                    <p>Análise e interpretação de imagens e vídeos</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="videos">
+            <h2><i class="fas fa-video"></i> Vídeos sobre Inteligência Artificial</h2>
+
+            <div class="video-container">
+                <h3><i class="fas fa-play-circle"></i> O que é Inteligência Artificial?</h3>
+                <iframe src="https://www.youtube.com/embed/Dk7h22mRYHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-info">
+                    <p>Uma explicação completa e didática sobre o que é Inteligência Artificial, como ela funciona e quais são suas principais aplicações no mundo moderno. O vídeo aborda conceitos fundamentais de forma acessível para todos os públicos.</p>
+                    <p class="video-author"><i class="fas fa-user-circle"></i> Canal: Manual do Mundo</p>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <h3><i class="fas fa-play-circle"></i> Inteligência Artificial e Machine Learning</h3>
+                <iframe src="https://www.youtube.com/embed/Lhu8bdmkMCM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-info">
+                    <p>Um guia completo sobre Inteligência Artificial e Machine Learning, explicando os principais conceitos, diferenças entre os tipos de aprendizado de máquina e como essas tecnologias estão transformando o mercado de trabalho e a sociedade.</p>
+                    <p class="video-author"><i class="fas fa-user-circle"></i> Canal: Código Fonte TV</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="aplicacoes">
+            <h2><i class="fas fa-star"></i> Aplicações da Inteligência Artificial</h2>
+            
+            <div class="ai-image-section">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80" alt="Aplicações de IA">
+            </div>
+
+            <ul class="aplicacoes">
+                <li>
+                    <i class="fas fa-microphone-alt"></i>
+                    <div class="app-content">
+                        <strong>Assistentes Virtuais:</strong> Como Alexa, Siri e Google Assistant, que utilizam IA para compreender comandos de voz e realizar tarefas como tocar música, controlar dispositivos domésticos e responder perguntas de forma natural.
+                    </div>
+                </li>
+                
+                <li>
+                    <i class="fas fa-car"></i>
+                    <div class="app-content">
+                        <strong>Carros Autônomos:</strong> Veículos equipados com sistemas de IA que podem dirigir sozinhos, reconhecendo obstáculos, sinais de trânsito e tomando decisões em tempo real para garantir a segurança dos passageiros e pedestres.
+                    </div>
+                </li>
+                
+                <li>
+                    <i class="fas fa-film"></i>
+                    <div class="app-content">
+                        <strong>Sistemas de Recomendação:</strong> Utilizados por Netflix, Spotify e YouTube para sugerir filmes, músicas e vídeos baseados nas preferências e histórico de cada usuário, personalizando a experiência de entretenimento.
+                    </div>
+                </li>
+                
+                <li>
+                    <i class="fas fa-heartbeat"></i>
+                    <div class="app-content">
+                        <strong>Diagnóstico Médico:</strong> Sistemas de IA que auxiliam médicos na detecção de doenças através da análise de exames de imagem, como raios-X e ressonâncias magnéticas, muitas vezes com precisão superior à humana na identificação de padrões.
+                    </div>
+                </li>
+                
+                <li>
+                    <i class="fas fa-comments"></i>
+                    <div class="app-content">
+                        <strong>Chatbots e Atendimento ao Cliente:</strong> Assistentes virtuais que atendem clientes 24 horas por dia, respondendo dúvidas, resolvendo problemas e direcionando para setores específicos quando necessário, melhorando a experiência do consumidor.
+                    </div>
+                </li>
+                
+                <li>
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="app-content">
+                        <strong>Detecção de Fraudes:</strong> Bancos e instituições financeiras usam IA para identificar transações suspeitas e prevenir fraudes em tempo real, protegendo os usuários e suas economias contra atividades criminosas.
+                    </div>
+                </li>
+                
+                <li>
+                    <i class="fas fa-language"></i>
+                    <div class="app-content">
+                        <strong>Tradução Automática:</strong> Ferramentas como Google Tradutor utilizam IA para traduzir textos e conversas entre diferentes idiomas de forma cada vez mais natural e precisa, quebrando barreiras de comunicação global.
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p><i class="fas fa-code"></i> <strong>Desenvolvido por:</strong> Julia Aparecida</p>
+        <p><i class="fas fa-calendar"></i> <strong>Data:</strong> 06 de Novembro de 2025</p>
+        <p><i class="fas fa-envelope"></i> <strong>Contato:</strong> <a href="mailto:juliaapcon9@gmail.com">juliaapcon9@gmail.com</a></p>
+    </footer>
+</body>
+</html>
