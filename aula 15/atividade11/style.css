@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: lightblue;
+    height: 300px;
+
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    font-size: 22px;
+}

@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  gap: 10px;
+
+}
+.box1 {
+  flex: 1;
+  background: lightgreen;
+  text-align: center;
+  padding: 20px;
+}
+.box2 {
+  flex: 1;
+  background: lightgreen;
+  text-align: center;
+  padding: 20px;
+}
+.box3 {
+  flex: 1;
+  background: lightgreen;
+  text-align: center;
+  padding: 20px;
+}

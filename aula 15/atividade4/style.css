@@ -1,0 +1,31 @@
+.container{
+    justify-content: center;
+    justify-content: collumn;
+    padding: 20px;
+}
+.box1{
+    background-color: rgb(31, 81, 35);
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+.box2{
+    background-color: rgb(26, 103, 28);
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+.box3{
+    background-color: rgb(101, 212, 41);
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    
+}
+.box4{
+    background-color: rgb(174, 255, 168);
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    
+}

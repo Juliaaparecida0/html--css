@@ -1,0 +1,26 @@
+.container{
+    
+    background-color: rgb(255, 254, 254);
+    display: flex;
+    justify-content: center;
+    padding: 20px; 
+}
+.box1{
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+.box2{
+    background-color: lightgreen;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+.box3{
+    background-color: lightblue;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    
+}
